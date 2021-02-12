@@ -46,5 +46,3 @@ The MATLAB wrapper for the mex file.
 
 ## make_hello_mex.m
 Script to compile the mex file and rudimentary testing of the code.
-
-
