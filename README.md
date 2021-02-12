@@ -1,4 +1,6 @@
 # HelloMex
+[![View HelloMex on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/87292-hellomex)
+
 
 The repositiory contains a simple example for MATLAB mex-file generation of C++ classes.
 The files are documented in detail directly in the code.
