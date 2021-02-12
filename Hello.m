@@ -9,7 +9,7 @@ classdef Hello < handle
     %
     % Examples:
     %   obj = Hello(preset)         % <- Constructor
-    %         obj.Delete()          % <- Destructor
+    %         obj.delete()          % <- Destructor
     %         obj.Compute(factor)   % <- Computes out = preset * factor
     %         obj.GetPreset()       % <- Returnes preset
     %
@@ -24,10 +24,16 @@ classdef Hello < handle
     % Author:
     %   Pascal Enderli, Zuerich, 13. Februar 2021
     
+    %======================================================================
+    %  Properties
+    %======================================================================
     properties (Access = private, Hidden = true)
         handle_ = -1;
     end
     
+    %======================================================================
+    %  Methods
+    %======================================================================
     methods
         %------------------------------------------------------------------
         %  Constructor
@@ -66,7 +72,7 @@ classdef Hello < handle
             %   None
             %
             % Examples:
-            %   obj.Delete() % <- Destructor
+            %   obj.delete() % <- Destructor
             %
             % Details:
             %   Arguments passed to the mex when calling:
@@ -75,6 +81,15 @@ classdef Hello < handle
             %
             HelloMex("Delete", this.handle_);
             this.handle_ = -1;
+        end
+        
+        function Delete(this)
+            % Destructor - Destroys a class instance
+            %
+            % Details:
+            % Same as delete()
+            %
+            this.delete();
         end
         
         %------------------------------------------------------------------
@@ -136,7 +151,7 @@ classdef Hello < handle
             %   None
             %
             % Outputs:
-            %   handle of this object instance (double).
+            %   handle of this object instance (uint64).
             %
             % Examples:
             %   obj.GetHandle() % <- Returns the handle
@@ -148,8 +163,26 @@ classdef Hello < handle
             out = this.handle_;
         end
     end
+    
+    %======================================================================
+    %  Static Methods
+    %======================================================================
     methods(Static)
+        %------------------------------------------------------------------
+        %   NumberOfInstances
+        %------------------------------------------------------------------
         function out = NumberOfInstances()
+            % NumberOfInstances - Retruns the handle of this object
+            %
+            % Inputs:
+            %   None
+            %
+            % Outputs:
+            %   number of unique instantiated objects from this class (uint64).
+            %
+            % Examples:
+            %   Hello.NumberOfInstances()
+            %
             out = HelloMex("GetNumberOfHandles");
         end
     end

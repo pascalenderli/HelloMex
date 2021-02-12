@@ -1,6 +1,6 @@
 // File:   hello.cpp
 // Author: Pascal Enderli
-// Date:   Zuerich, 06. Februar 2021
+// Date:   Zuerich, 06.02.2021
 
 #include "hello.h"
 

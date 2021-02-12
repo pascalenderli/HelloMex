@@ -1,6 +1,6 @@
 // File:   hello.h
 // Author: Pascal Enderli
-// Date:   Zuerich, 06. Februar 2021
+// Date:   Zuerich, 06.02.2021
 
 #ifndef HELLO_H
 #define HELLO_H
