@@ -284,7 +284,7 @@ public:
             {
                 if( !IsInt(inputs, 1) && !IsUInt(inputs, 1) )
                 {
-                    throw std::invalid_argument("Expected an int as input.");
+                    throw std::invalid_argument("Expected an uint as input.");
                 }
                 size_t handle = inputs[1][0];
                 LOG(LEVEL_INFO, "Receive handle: " + std::to_string(handle));
