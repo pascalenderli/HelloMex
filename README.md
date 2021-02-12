@@ -24,6 +24,7 @@ MexFunction class always knows which object state it needs to refer to.
 * Run the make_hello_mex.m script to compile the mex file.
 * Use `doc Hello` after you compiled the mex-file to get a documentation of the MATLAB class.
 * Study the detailed comments inside the files.
+* Enjoy and like on Github and File Exchange :-)
 
 # Repository Files:
 This repository contains the following files.
@@ -38,11 +39,13 @@ object. Using the Method Compute(factor) the preset number is multiplied with th
 argument called factor.
 
 ## HelloMex.cpp
-Holds the implementation of the C++ Wrapper class MexFunction. On the oupper part top of the
+Holds the implementation of the C++ Wrapper class 'MexFunction'. On the upper part of the
 file is also a compile time configuration concerning the log level of the mex file.
+This file translates to the mex-file after compilation.
 
 ## Hello.m
-The MATLAB wrapper for the mex file.
+The MATLAB wrapper for the mex file. This class manages calls to the mex-file and provides
+a userfriendly class interface to interact with the underlined cpp class methods.
 
 ## make_hello_mex.m
 Script to compile the mex file and rudimentary testing of the code.
