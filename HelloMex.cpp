@@ -21,8 +21,8 @@
 // Defines which messages are logged to the MATLAB Console.
 //
 // Possible values:
-// 0 -> logs LEVEL_FAIL, log LEVEL_WARN, log LEVEL_INFO
-// 1 -> logs LEVEL_FAIL, log LEVEL_WARN
+// 0 -> logs LEVEL_FAIL, LEVEL_WARN, LEVEL_INFO
+// 1 -> logs LEVEL_FAIL, LEVEL_WARN
 // 2 -> logs LEVEL_FAIL
 #define LOG_LEVEL 2
 
@@ -202,7 +202,7 @@ private:
 // command handler and calls the underlaying method from the requested object instance.
 // Additionally some type casting is done in order to map MATLAB data types to C++ data types and
 // vice versa.
-class MexFunction : public matlab::mex::Function, MatlabLogger
+class MexFunction : public MatlabLogger
 {
 public:
     MexFunction() : matlab_ptr_(matlab::mex::Function::getEngine()) {}
@@ -251,7 +251,7 @@ public:
                 }
                 double preset = inputs[1][0];
 
-                hello_objects_.push_back(std::make_unique<Hello>(preset));
+                hello_objects_.push_back(std::unique_ptr<Hello>(new Hello(std::forward<double>(preset))));
 
                 size_t handle = object_handles_.Add();
                 LOG(LEVEL_INFO, "Return handle: " + std::to_string(handle));
