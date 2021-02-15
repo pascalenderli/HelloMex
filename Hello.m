@@ -1,29 +1,25 @@
-% File: Hello.m
-% Author: Pascal Enderli
-% Date: Zuerich, 06.02.2021
+% Hello MATLAB wrapper to an underlying C++ class
+%
+% This interface is a wrapper for the C++ class 'Hello'.
+%
+% Examples:
+%   obj = Hello(preset)         % <- Constructor
+%         obj.delete()          % <- Destructor
+%         obj.Compute(factor)   % <- Computes out = preset * factor
+%         obj.GetPreset()       % <- Returnes preset
+%
+% Note:
+% The mex file HelloMex.mex64 must be in the MATLAB search path.
+% * The class instances are managed by the mex file. each constructed
+%   instance is referenced by a unique handle to disambiguate.
+% * There exists also a c++ side wrapper called 'HelloMex.cpp'.
+%   HelloMex.cpp Emulates class behaviour on the MATLAB side and manages
+%   the properties of the object instances.
+%
+% Author:
+%   Pascal Enderli, Zuerich, 13. Februar 2021
 
 classdef Hello < handle
-    % Hello MATLAB wrapper to an underlying C++ class
-    %
-    % This interface is a wrapper for the C++ class 'Hello'.
-    %
-    % Examples:
-    %   obj = Hello(preset)         % <- Constructor
-    %         obj.delete()          % <- Destructor
-    %         obj.Compute(factor)   % <- Computes out = preset * factor
-    %         obj.GetPreset()       % <- Returnes preset
-    %
-    % Note:
-    % The mex file HelloMex.mex64 must be in the MATLAB search path.
-    % * The class instances are managed by the mex file. each constructed
-    %   instance is referenced by a unique handle to disambiguate.
-    % * There exists also a c++ side wrapper called 'HelloMex.cpp'.
-    %   HelloMex.cpp Emulates class behaviour on the MATLAB side and manages
-    %   the properties of the object instances.
-    %
-    % Author:
-    %   Pascal Enderli, Zuerich, 13. Februar 2021
-    
     %======================================================================
     %  Properties
     %======================================================================
