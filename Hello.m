@@ -17,7 +17,7 @@
 %   the properties of the object instances.
 %
 % Author:
-%   Pascal Enderli, Zuerich, 13. Februar 2021
+%   Pascal Enderli, Zuerich, 13.02.2021
 
 classdef Hello < handle
     %======================================================================
