@@ -9,12 +9,13 @@
 %         obj.GetPreset()       % <- Returnes preset
 %
 % Note:
-% The mex file HelloMex.mex64 must be in the MATLAB search path.
+% * The mex file HelloMex.mex64 must be in the MATLAB search path.
 % * The class instances are managed by the mex file. each constructed
-%   instance is referenced by a unique handle to disambiguate.
-% * There exists also a c++ side wrapper called 'HelloMex.cpp'.
-%   HelloMex.cpp Emulates class behaviour on the MATLAB side and manages
-%   the properties of the object instances.
+%   instance is referenced by a unique handle (uint64 number) to disambiguate.
+% * There exists also a C++ side wrapper in the file 'HelloMex.cpp'.
+%   HelloMex.cpp mainly defines a wrapper class and its operator() method, 
+%   which emulates class behaviour on the MATLAB objects, since it manges 
+%   the object states of the instantiated MATLAB objects.
 %
 % Author:
 %   Pascal Enderli, Zuerich, 13.02.2021
